@@ -19,10 +19,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { DialogoInsertarEditarEstadoComponent } from './Dialogo/dialogo-insertar-editar-estado/dialogo-insertar-editar-estado.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogoInsertarEditarEstadoComponent
   ],
   imports: [
     BrowserModule,

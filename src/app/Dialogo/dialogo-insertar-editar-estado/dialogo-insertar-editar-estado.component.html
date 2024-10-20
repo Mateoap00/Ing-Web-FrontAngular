@@ -1,5 +1,53 @@
-<h2 mat-dialog-title>Dialog with elements</h2>
-<mat-dialog-content>This dialog showcases the title, close, content and actions elements.</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</mat-dialog-actions>
+<div mat-dialog-content>
+    <form [formGroup]="formEstado">
+        <h2 mat-dialog-title>{{ tituloFormulario }} Estado</h2>
+        <mat-grid-list cols="1" rowHeight="100px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre de estado</mat-label>
+                    <input
+                        matInput
+                        placeholder="Nombre"
+                        formControlName="nombre"
+                        autocomplete="off"
+                    />
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción</mat-label>
+                    <input
+                        matInput
+                        placeholder="Descripción"
+                        formControlName="descripcion"
+                        autocomplete="off"
+                    />
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Activo</mat-label>
+                    <input
+                        matInput
+                        placeholder="Activo"
+                        formControlName="activo"
+                        autocomplete="off"
+                    />
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button
+        mat-raised-button
+        color="primary"
+        (click)="insertarEstado()"
+        [disabled]="formEstado.invalid"
+    >
+        {{ tituloBoton }}
+    </button>
+    <button mat-raised-button mat-dialog-close color="warn">Regresar</button>
+</div>

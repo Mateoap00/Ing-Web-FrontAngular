@@ -20,33 +20,29 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DialogoInsertarEditarEstadoComponent } from './Dialogo/dialogo-insertar-editar-estado/dialogo-insertar-editar-estado.component';
+import { DialogoEliminarComponent } from './Dialogo/dialogo-eliminar/dialogo-eliminar.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DialogoInsertarEditarEstadoComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSnackBarModule,
-    MatDialogModule,
-    MatGridListModule,
-    MatButtonModule,
-    MatIconModule
-  ],
-  providers: [
-    provideAnimationsAsync()
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent, DialogoInsertarEditarEstadoComponent, DialogoEliminarComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSnackBarModule,
+        MatDialogModule,
+        MatGridListModule,
+        MatButtonModule,
+        MatIconModule,
+    ],
+    providers: [provideAnimationsAsync()],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

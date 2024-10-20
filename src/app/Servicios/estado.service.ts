@@ -5,26 +5,25 @@ import { Observable } from 'rxjs';
 import { Estado } from '../Interfaces/estado';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
-
 export class EstadoService {
-    private URL:string = environment.endPoint;
-    constructor(private http:HttpClient) { }
+    private URL: string = environment.endPoint;
+    constructor(private http: HttpClient) {}
 
-    listar():Observable<Estado[]>{
+    listar(): Observable<Estado[]> {
         return this.http.get<Estado[]>(`${this.URL}/listar`);
     }
 
-    guardar(nuevo:Estado):Observable<Estado>{
+    guardar(nuevo: Estado): Observable<Estado> {
         return this.http.post<Estado>(`${this.URL}/guardar`, nuevo);
     }
 
-    actualizar(editado:Estado):Observable<Estado>{
+    actualizar(editado: Estado): Observable<Estado> {
         return this.http.put<Estado>(`${this.URL}/actualizar`, editado);
     }
 
-    eliminar(id:number):Observable<string>{
-        return this.http.delete<string>(`${this.URL}/eliminar/${id}`);
+    eliminar(id: number): Observable<string> {
+        return this.http.delete(`${this.URL}/eliminar/${id}`, { responseType: 'text' });
     }
 }

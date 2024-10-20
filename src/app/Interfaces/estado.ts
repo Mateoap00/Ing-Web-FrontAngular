@@ -1,6 +1,6 @@
 export interface Estado {
-    id: number,
-    nombre: string,
-    descripcion: string
-    activo: number
+    id: number;
+    nombre: string;
+    descripcion: string;
+    activo: number;
 }

@@ -1,6 +1,7 @@
 <div style="width: 70%; margin: 50px auto">
     <h1>Estados</h1>
     <button mat-raised-button color="primary" (click)="aperturaDialogo()">Agregar Estado</button>
+    <button mat-raised-button color="accent" (click)="exportToExcel()">Exportar a Excel</button>
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSourceEstado">
             <!-- Position Column -->

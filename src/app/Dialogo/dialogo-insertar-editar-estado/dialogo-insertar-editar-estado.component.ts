@@ -11,6 +11,11 @@ import { EstadoService } from '../../Servicios/estado.service';
     styleUrl: './dialogo-insertar-editar-estado.component.css',
 })
 export class DialogoInsertarEditarEstadoComponent implements OnInit {
+    formEstado!: FormGroup;
+    tituloFormulario: string = 'Nuevo';
+    tituloBoton: string = 'Guardar';
+    listaEstados: Estado[] = [];
+
     constructor(
         private dialogoReferencia: MatDialogRef<DialogoInsertarEditarEstadoComponent>,
         private _snackBar: MatSnackBar,
@@ -38,11 +43,6 @@ export class DialogoInsertarEditarEstadoComponent implements OnInit {
             this.tituloBoton = 'Actualizar';
         }
     }
-
-    formEstado!: FormGroup;
-    tituloFormulario: string = 'Nuevo';
-    tituloBoton: string = 'Guardar';
-    listaEstados: Estado[] = [];
 
     alerta(msg: string, accion: string) {
         this._snackBar.open(msg, accion, {

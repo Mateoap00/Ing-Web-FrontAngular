@@ -6,6 +6,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoInsertarEditarEstadoComponent } from './Dialogo/dialogo-insertar-editar-estado/dialogo-insertar-editar-estado.component';
 import { DialogoEliminarComponent } from './Dialogo/dialogo-eliminar/dialogo-eliminar.component';
+import * as XLSX from 'xlsx';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -100,6 +101,13 @@ export class AppComponent implements AfterViewInit, OnInit {
                     });
                 }
             });
+    }
+
+    exportToExcel(): void {
+        const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.dataSourceEstado.data);
+        const wb: XLSX.WorkBook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Estados');
+        XLSX.writeFile(wb, 'Estados.xlsx');
     }
 
     ngAfterViewInit() {
